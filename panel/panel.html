@@ -1,0 +1,35 @@
+<html>
+<head>
+  <link rel='stylesheet' href='panel.css'>
+  <script src="../vendor/jquery-1.6.4.js"></script>
+  <script src="../lib/coffee-script.js"></script>
+
+</head>
+<body>
+<!-- <img src="logo.png"> -->
+<div class="navigation try">
+  <!--<div>-->
+    <!--<label>Evalulate CoffeScript in Console</label>-->
+    <!--<input type="checkbox">-->
+  <!--</div>-->
+  <div class="contents repl_wrapper">
+    <div class="code">
+      <div class="screenshadow tl"></div>
+      <div class="screenshadow tr"></div>
+      <div class="screenshadow bl"></div>
+      <div class="screenshadow br"></div>
+      <div id="repl_source_wrap">
+        <textarea id="repl_source" rows="100" spellcheck="false">alert "Hello CoffeeScript!"</textarea>
+      </div>
+      <div id="repl_results_wrap">
+        <pre id="repl_results"></pre>
+      </div>
+      <div class="minibutton dark run" title="Ctrl-Enter">Run</div>
+      <br class="clear"/>
+    </div>
+  </div>
+</div>
+<script type="text/coffeescript" src="panel.coffee"></script>
+</body>
+</body>
+</html>
