@@ -34,7 +34,15 @@ evalJS = ->
          if (isException)
           console.log("Fail eval: "+msg.text);
          else
-   	      chrome.experimental?.devtools.console.addMessage("log", window.source)
+           chrome.experimental?.devtools.console.addMessage("log", window.source)
+
+          # Trick to show the result of the compiledJs in the console
+          str = JSON.stringify(result)
+          random = (~~(Math.random()*(1<<24))).toString(16)
+          _eval = "window['tmp#{random}'] = #{str};"
+          _eval += "console.log(window['tmp#{random}']);"
+          chrome.devtools.inspectedWindow.eval _eval, ()->
+
     )
   catch error then alert error
 
